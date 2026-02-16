@@ -82,9 +82,9 @@ Hive is designed to be used with an AI coding assistant.
 
 ### Prerequisites
 
-1.  **[Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview)** OR **[Cursor](https://www.cursor.com/)** (Install one)
+1.  **[Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview)**, **[Cursor](https://www.cursor.com/)**, or **[Codex CLI](https://github.com/openai/codex)** (Install one)
 2.  Python 3.11+
-3.  Anthropic API Key
+3.  LLM API Key (e.g., Anthropic, OpenAI, Gemini)
 
 ### Start Guide
 
@@ -97,17 +97,25 @@ Hive is designed to be used with an AI coding assistant.
     cd hive
     ./quickstart.sh
     ```
+    *(Sets up the python environment and installs dependencies)*
     > **Windows Users:** Use WSL (Windows Subsystem for Linux) or Git Bash.
-3.  **Run**:
+3.  **Build the Agent**:
     ```bash
-    # If using Claude Code:
+    # If using Claude Code / Codex CLI:
     claude> /hive
 
     # If using Cursor (Agent Mode):
     cursor> /hive
     ```
+    This starts the **build workflow**, where the coding agent generates your agent graph based on your goals.
 
-    That's it! You are now running a Hive agent.
+4.  **Run the Agent**:
+    Once the agent is built, run it using the TUI or CLI:
+    ```bash
+    hive tui                       # Interactive dashboard
+    hive run exports/my_agent      # Run specific agent
+    ```
+
 ##  Coding Agent Support
 ### Codex CLI
 Hive includes native support for [OpenAI Codex CLI](https://github.com/openai/codex) (v0.101.0+).
